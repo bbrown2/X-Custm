@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { Header, Main, Footer } from './components/index';
+import { headerObj } from './components/header/data';
+import { mainObj } from './components/main/data';
+import { footerObj, socialLinks } from './components/footer/data';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<React.Fragment>
+			<Router>
+				<Header {...headerObj} {...mainObj} />
+				<Main {...mainObj} />
+				<Footer {...footerObj} {...socialLinks} />
+			</Router>
+		</React.Fragment>
+	);
 }
 
 export default App;
